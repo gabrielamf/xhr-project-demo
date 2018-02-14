@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.masthead {
+  height: 50vh;
+}
+.title {
+  font-weight: 900;
+  font-size: 3rem;
+  padding: 3rem auto;
+}
+.visuallyhidden {
+  font-size: 1rem;
+  margin: 0 1rem;
+  border-right: 1px solid white;
+  padding: 0 1rem;
+}
+#search-keyword {
+  width: 40%;
+  border: 1px solid rgba(255, 255, 255, 0.774);
+  padding: 0 15px;
+  border-radius: 5px;
+  margin: 0;
+}
+.articleClass {
+  color: rgb(109, 112, 124);
+  font-size: 1rem;
+  text-align: center;
+  margin: 1rem 0;
+  padding-bottom: .5rem;
+}
+.titleClass {
+  margin-top: 1rem;
+  border-top: 1px solid #d81b60;
+  color: #d81b60;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  cursor: pointer;
+}
+.imageClass {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 2rem;
+}
