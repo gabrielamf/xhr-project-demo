@@ -44,38 +44,41 @@ function getNews() {
 }
 
 function addNews(article) {
-  article.map((article) => {
-    console.log(article);
-    const title = article.headline.main;
-    const snippet = article.snippet;
-    const imagen = article.multimedia[0].url;
-    const webUrl = article.web_url;
-
-    let p = document.createElement('p');
-    let li = document.createElement('li');
-    let img = document.createElement('img');
-
-    p.className = 'titleClass';
-    li.className = 'articleClass';
-    img.className = 'imageClass';
-    li.innerText = snippet;
-    p.innerText = title;
-    img.src = 'https://nytimes.com/' + imagen;
-
-    responseContainer.appendChild(p);
-    responseContainer.appendChild(li);
-    responseContainer.appendChild(img);
-
-    p.addEventListener('click', function() {
-      window.location.href = webUrl;
+  if (article.length > 0) {
+    article.map((element) => {
+      if (element.document_type === 'article') {
+        // console.log(article);
+        const title = element.headline.main;
+        const snippet = element.snippet;
+        const imagen = element.multimedia[0].url;
+        const webUrl = element.web_url;
+    
+        let p = document.createElement('p');
+        let li = document.createElement('li');
+        let img = document.createElement('img');
+    
+        p.className = 'titleClass';
+        li.className = 'articleClass';
+        img.className = 'imageClass';
+        li.innerText = snippet;
+        p.innerText = title;
+        img.src = 'https://nytimes.com/' + imagen;
+    
+        responseContainer.appendChild(p);
+        responseContainer.appendChild(li);
+        responseContainer.appendChild(img);
+    
+        p.addEventListener('click', function() {
+          window.location.href = webUrl;
+        });
+      } 
     });
-  });
-  /* console.log(this.responseText);
-  console.log(data.response);
-  console.log(this.responseText.docs);*/
+  } else {
+    alert('Lo sentimos, no hay información sobre este articulo');
+    searchField.value = '';
+  }
 }
 
 function handleError(error) {
   console.log(error);
 }
-
