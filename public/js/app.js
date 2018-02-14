@@ -16,7 +16,7 @@ btnFetch.addEventListener('click', function(e) {
   e.preventDefault();
   responseContainer.innerHTML = '';
   searchedForText = searchField.value;
-  let uri = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=9b862bfc87dc4ac89e968cad79b16cbc`;
+  let uri = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=9b862bfc87dc4ac89e968cad79b16cbc`;
   fetch(uri)
     .then(function(response) {
       return response.json();
